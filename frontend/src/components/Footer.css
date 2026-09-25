@@ -1,0 +1,53 @@
+.custom-footer {
+ 
+  padding: 25px 0;
+
+  background: rgba(2, 6, 23, 0.9);
+  backdrop-filter: blur(15px);
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Text */
+.footer-text {
+  font-size: 16px;
+  color: #cbd5e1;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* Icons container */
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  justify-content: flex-end;
+  gap: 20px;
+
+  font-size: 28px;
+  color: #cbd5e1;
+}
+
+/* Icon hover futuristic glow */
+.footer-icons svg {
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.footer-icons svg:hover {
+  color: #38bdf8;
+  transform: translateY(-3px) scale(1.1);
+
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.6));
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-icons {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .footer-text {
+    text-align: center;
+  }
+}

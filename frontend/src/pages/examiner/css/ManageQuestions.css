@@ -1,0 +1,147 @@
+/* frontend/src/pages/examiner/css/ManageQuestions.css */
+
+.manage-container {
+  display: grid;
+  gap: 30px;
+}
+
+.question-form-card {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #2563eb;
+}
+
+.question-form-card h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #1e293b;
+  font-size: 1.3rem;
+}
+
+.questions-list-section h2 {
+  color: #1e293b;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.question-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  margin-bottom: 20px;
+  border: 1px solid #e2e8f0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.question-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.question-header h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.marks-badge {
+  background: #e0f2fe;
+  color: #0284c7;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: 15px;
+}
+
+.options-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.option-item {
+  background: #f8fafc;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+.option-item.correct {
+  background: #dcfce7;
+  border-color: #22c55e;
+  color: #166534;
+  font-weight: 500;
+}
+
+.card-actions {
+  display: flex;
+  gap: 12px;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 15px;
+}
+
+.btn-edit-inline {
+  background: #f1f5f9;
+  color: #3b82f6;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-edit-inline:hover {
+  background: #e0f2fe;
+}
+
+.btn-delete-inline {
+  background: #fef2f2;
+  color: #ef4444;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-delete-inline:hover {
+  background: #fee2e2;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px dashed #cbd5e1;
+  color: #64748b;
+}
+
+/* Reusing Form styles from previous components */
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; color: #333; font-weight: 600; }
+.form-control { width: 100%; padding: 14px; border: 1px solid #cbd5e1; border-radius: 10px; font-family: inherit;  }
+.form-control:focus { outline: none; border-color: #2563eb; }
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 20px; }
+.form-row { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+
+

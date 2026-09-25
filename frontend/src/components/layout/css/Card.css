@@ -1,0 +1,23 @@
+.card{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+.card h3{
+    color:#666;
+    font-size:16px;
+}
+
+.card h1{
+    margin-top:10px;
+    font-size:32px;
+}
+
+.card-icon{
+    font-size:45px;
+}

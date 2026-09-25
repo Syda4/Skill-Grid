@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-dark: #030712;
+  --card-bg: rgba(15, 23, 42, 0.75);
+  --input-bg: rgba(2, 6, 23, 0.8);
+  --primary-blue: #2563eb;
+  --primary-cyan: #38bdf8;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: rgba(56, 189, 248, 0.2);
+  --border-focus: #38bdf8;
+  --shadow-glow: 0 0 20px rgba(56, 189, 248, 0.35);
+}
+
+.register-page {
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+    var(--bg-dark);
+  color: var(--text-main);
+}
+
+.register-page * {
+  box-sizing: border-box;
+}
+
+.register-page .main-container {
+  width: 100%;
+  max-width: 520px;
+}
+
+.register-page .form-box {
+  width: 100%;
+  background: var(--card-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 36px;
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.register-page .brand-header h2 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.register-page .subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.register-page .form-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary-cyan);
+  margin-bottom: 20px;
+}
+
+.register-page .auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.register-page .input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.register-page .input-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.register-page .input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.register-page .input-group input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.register-page .input-group input::placeholder {
+  color: #64748b;
+}
+
+.register-page .input-group input:focus {
+  border-color: var(--border-focus);
+  box-shadow: var(--shadow-glow);
+}
+
+.register-page .password-group .input-wrapper input {
+  padding-right: 75px;
+}
+
+.register-page .password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--primary-cyan);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.register-page .password-toggle:hover {
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.register-page .terms-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 12px 0 16px;
+}
+
+.register-page .signup-btn {
+  width: 100%;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+  transition: all 0.3s ease;
+}
+
+.register-page .signup-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(56, 189, 248, 0.35);
+}
+
+.register-page .signup-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.register-page .register-link {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.register-page .register-link a {
+  color: var(--primary-cyan);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-page .register-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .register-page {
+    padding: 20px 12px;
+  }
+  .register-page .form-box {
+    padding: 24px 18px;
+  }
+}

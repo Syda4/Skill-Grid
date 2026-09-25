@@ -1,0 +1,31 @@
+/* ============================================================
+   Hidden Scrollbar Table Utility
+   ============================================================ */
+
+/* 1. Scrollable Container Setup */
+.table-scroll-wrap {
+  max-height: 480px; /* Limits table height so scroll activates */
+  overflow-y: auto;  /* Enables vertical scrolling */
+  overflow-x: auto;  /* Enables horizontal scrolling on small screens */
+}
+
+/* 2. Hide Scrollbar for Chrome, Safari, Edge, Opera */
+.table-scroll-wrap.custom-scrollbar::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  display: none;
+}
+
+/* 3. Hide Scrollbar for Firefox & Legacy Edge/IE */
+.table-scroll-wrap.custom-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;   /* Firefox */
+}
+
+/* 4. Keep Header Fixed at Top While Scrolling */
+.table-scroll-wrap .custom-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: #121417; /* Adjust to match your dark card background */
+}

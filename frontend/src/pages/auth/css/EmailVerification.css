@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bg-dark: #030712;
+  --card-bg: rgba(15, 23, 42, 0.75);
+  --input-bg: rgba(2, 6, 23, 0.8);
+  --primary-blue: #2563eb;
+  --primary-cyan: #38bdf8;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: rgba(56, 189, 248, 0.2);
+  --border-focus: #38bdf8;
+  --shadow-glow: 0 0 20px rgba(56, 189, 248, 0.35);
+}
+
+.verification-page {
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(56, 189, 248, 0.12) 0%, transparent 45%),
+    var(--bg-dark);
+  color: var(--text-main);
+}
+
+.verification-page * {
+  box-sizing: border-box;
+}
+
+.verification-page .main-container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.verification-page .form-box {
+  width: 100%;
+  background: var(--card-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  padding: 36px;
+  border-radius: 24px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  text-align: center;
+}
+
+.verification-page .icon-wrapper {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 16px;
+  background: rgba(56, 189, 248, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verification-page .email-icon {
+  width: 36px;
+  height: 36px;
+}
+
+.verification-page h2 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.verification-page .subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.verification-page .highlight-email {
+  color: var(--primary-cyan);
+  font-weight: 600;
+}
+
+.verification-page .auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.verification-page .input-group {
+  margin-bottom: 0;
+}
+
+.verification-page .otp-input {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-color);
+  background: var(--input-bg);
+  color: var(--text-main);
+  outline: none;
+  transition: all 0.3s ease;
+  text-align: center;
+  letter-spacing: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.verification-page .otp-input::placeholder {
+  letter-spacing: 4px;
+  color: #64748b;
+}
+
+.verification-page .otp-input:focus {
+  border-color: var(--border-focus);
+  box-shadow: var(--shadow-glow);
+}
+
+.verification-page .action-btn {
+  width: 100%;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+  transition: all 0.3s ease;
+}
+
+.verification-page .action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(56, 189, 248, 0.35);
+}
+
+.verification-page .success-message {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.verification-page .resend-link {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.verification-page .resend-link button {
+  border: none;
+  background: none;
+  color: var(--primary-cyan);
+  cursor: pointer;
+  margin-left: 6px;
+  font-weight: bold;
+}
+
+.verification-page .resend-link button:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .verification-page {
+    padding: 20px 12px;
+  }
+  .verification-page .form-box {
+    padding: 24px 18px;
+  }
+}

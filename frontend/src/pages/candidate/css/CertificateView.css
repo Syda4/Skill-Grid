@@ -1,0 +1,268 @@
+/* ==========================================
+   FORMAL INDUSTRIAL CERTIFICATE VIEW
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Great+Vibes&display=swap');
+
+.certificate-layout * {
+  box-sizing: border-box;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.certificate-layout {
+  padding: 30px;
+  min-height: 100vh;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Dashboard Action Header */
+.action-bar {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: rgba(15, 23, 42, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 12px;
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-back:hover {
+  background: rgba(30, 41, 59, 0.9) !important;
+  color: #38bdf8 !important;
+  border-color: rgba(56, 189, 248, 0.4) !important;
+}
+
+.btn-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.8), rgba(234, 88, 12, 0.9)) !important;
+  border: 1px solid rgba(249, 115, 22, 0.5) !important;
+  border-radius: 12px;
+  color: #ffffff !important;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
+}
+
+.btn-download:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(249, 115, 22, 0.5);
+}
+
+/* Outer Document Frame */
+.certificate-wrapper {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Formal White/Ivory Paper Container */
+.certificate-container {
+  width: 100%;
+  background: #ffffff !important; /* Crisp, clean paper background */
+  color: #0f172a !important; /* Dark text for standard print readability */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/* Double Navy / Gold Border System */
+.certificate-border {
+  border: 4px double #1e3a8a; /* Deep Navy Blue */
+  background: #fdfbf7; /* Warm Subtle Ivory tint */
+  padding: 8px;
+}
+
+.certificate-inner-border {
+  border: 1px solid #d97706; /* Classic Gold Accent line */
+  padding: 40px 30px;
+  text-align: center;
+  position: relative;
+}
+
+/* Corner Accents */
+.cert-corner {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: #1e3a8a;
+  border-style: solid;
+}
+
+.top-left { top: 6px; left: 6px; border-width: 2px 0 0 2px; }
+.top-right { top: 6px; right: 6px; border-width: 2px 2px 0 0; }
+.bottom-left { bottom: 6px; left: 6px; border-width: 0 0 2px 2px; }
+.bottom-right { bottom: 6px; right: 6px; border-width: 0 2px 2px 0; }
+
+/* Header Formatting */
+.cert-header-group {
+  margin-bottom: 20px;
+}
+
+.cert-logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.cert-header {
+  font-family: 'Cinzel', serif !important;
+  font-size: 30px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 2px !important;
+  color: #1e3a8a !important; /* Navy Blue */
+  margin: 0 0 6px 0 !important;
+}
+
+.cert-subheader {
+  color: #475569 !important;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.cert-divider {
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #d97706, transparent);
+  margin: 15px auto 25px auto;
+}
+
+/* Body Content */
+.cert-body {
+  margin: 20px 0;
+}
+
+.cert-text {
+  color: #334155 !important;
+  font-size: 15px;
+  margin: 8px 0 !important;
+  font-weight: 400;
+}
+
+.cert-name {
+  font-family: 'Cinzel', serif !important;
+  font-size: 34px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin: 12px 0 16px 0;
+  border-bottom: 1px solid #cbd5e1;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.cert-course {
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #1e3a8a !important;
+  margin: 8px 0 16px 0;
+}
+
+.cert-score-highlight {
+  color: #047857 !important; /* Professional Dark Emerald Green */
+  font-weight: 700;
+}
+
+/* Official Seal */
+.cert-seal-wrapper {
+  margin: 20px 0;
+}
+
+.cert-seal {
+  width: 70px;
+  height: 70px;
+}
+
+/* Footer & Signatures */
+.cert-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.cert-signature {
+  text-align: center;
+}
+
+.signature-font {
+  font-family: 'Great Vibes', cursive !important;
+  font-size: 32px !important;
+  color: #1e3a8a !important;
+  line-height: 1;
+}
+
+.signature-title {
+  font-size: 12px;
+  color: #64748b !important;
+  margin-top: 4px;
+  border-top: 1px solid #cbd5e1;
+  padding-top: 4px;
+  font-weight: 600;
+}
+
+.cert-meta {
+  font-size: 12px;
+  color: #475569 !important;
+  line-height: 1.8;
+  text-align: right;
+}
+
+.cert-meta strong {
+  color: #0f172a !important;
+}
+
+.cert-id {
+  color: #b45309 !important; /* Muted Gold/Amber */
+  font-family: monospace;
+  font-weight: 700;
+}
+
+.cert-link {
+  color: #2563eb !important;
+}
+
+/* Print Optimization */
+@media print {
+  body {
+    background: #ffffff !important;
+  }
+  .action-bar {
+    display: none !important;
+  }
+  .certificate-layout {
+    padding: 0 !important;
+  }
+  .certificate-container {
+    box-shadow: none !important;
+  }
+}

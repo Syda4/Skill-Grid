@@ -1,0 +1,106 @@
+/* frontend/src/pages/examiner/css/CreateAssessment.css */
+
+/* Dark Theme Form Inputs & Structure */
+.custom-dashboard-main input.form-control,
+.custom-dashboard-main textarea.form-control {
+  background-color: rgba(15, 10, 28, 0.7) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--card-border) !important;
+  border-radius: 10px !important;
+  padding: 12px 16px !important;
+  font-size: 14px !important;
+  transition: all 0.2s ease-in-out !important;
+  width: 100%;
+}
+
+.custom-dashboard-main input.form-control::placeholder,
+.custom-dashboard-main textarea.form-control::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.7;
+}
+
+.custom-dashboard-main input.form-control:focus,
+.custom-dashboard-main textarea.form-control:focus {
+  outline: none !important;
+  border-color: var(--accent-cyan) !important;
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.25) !important;
+  background-color: rgba(15, 10, 28, 0.9) !important;
+}
+
+/* Label Styling */
+.form-group label {
+  color: var(--text-main) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+  display: block;
+  letter-spacing: 0.5px;
+}
+
+/* Submit Action Button */
+.btn-submit-assessment {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 12px 28px !important;
+  border-radius: 10px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3) !important;
+}
+
+.btn-submit-assessment:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4) !important;
+  opacity: 0.95;
+}
+
+.btn-submit-assessment:active {
+  transform: translateY(0) !important;
+}
+
+/* Back Button Alignment */
+.btn-back-skills {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--card-border) !important;
+  padding: 8px 18px !important;
+  border-radius: 10px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn-back-skills:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+/* Custom Responsive Grid for Form Inputs */
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .form-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Page Scrollability Fix */
+.dashboard-page-container {
+  max-height: 100vh;
+  overflow-y: auto;
+}

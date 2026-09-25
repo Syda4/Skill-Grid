@@ -1,0 +1,217 @@
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import "./css/Dashboard.css";
+
+const ExaminerProfile = () => {
+  const navigate = useNavigate();
+  const [examiner, setExaminer] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getExaminerProfile();
+  }, []);
+
+  const getExaminerProfile = async () => {
+    const endpoints = [
+      "http://localhost:8081/examiner/dashboard",
+      "http://localhost:8081/examiner/profile",
+      "http://localhost:8081/auth/me",
+      "http://localhost:8081/user/profile",
+    ];
+
+    let foundData = null;
+
+    for (const url of endpoints) {
+      try {
+        const res = await axios.get(url, { withCredentials: true });
+        foundData = res.data?.user || res.data?.examiner || res.data?.data || res.data;
+        if (foundData && (foundData.name || foundData.email)) {
+          setExaminer(foundData);
+          break;
+        }
+      } catch (err) {
+        console.log(`Examiner fetch failed for ${url}:`, err.response?.status || err.message);
+      }
+    }
+
+    if (!foundData) {
+      console.warn("Could not fetch examiner profile from tested endpoints.");
+    }
+
+    setLoading(false);
+  };
+
+  const capitalize = (str) => {
+    if (!str) return "";
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+  if (loading) {
+    return (
+      <div className="d-flex justify-content-center align-items-center vh-100 text-light">
+        <div className="spinner-border text-cyan" role="status"></div>
+        <span className="ms-3 fw-semibold">Loading Examiner Profile...</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="profile-dashboard-wrapper p-4">
+      {/* Header Banner */}
+      <header className="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4 pb-3 border-bottom border-secondary border-opacity-25">
+        <div>
+          <h1 className="fw-bold fs-2 m-0 text-white d-flex align-items-center gap-2">
+            <span>
+              {(() => {
+                const hour = new Date().getHours();
+                if (hour < 12) return "Good morning";
+                if (hour < 18) return "Good afternoon";
+                return "Good evening";
+              })()}
+              ,{" "}
+              <span className="theme-gradient-text">
+                {examiner?.name ? capitalize(examiner.name.split(" ")[0]) : "Examiner"}
+              </span>!
+            </span>
+            <span className="wave-emoji">👋</span>
+          </h1>
+          <p className="subtext-gray m-0 mt-1 fs-6">
+            Welcome back to your workspace. Here’s a detailed overview of your examiner account.
+          </p>
+        </div>
+
+        {/* Live Session Pill */}
+        <div className="neon-status-pill">
+          <span className="pulse-dot-green"></span>
+          <span>Active Session</span>
+        </div>
+      </header>
+
+      {/* Main Content Layout */}
+      <div className="row g-4">
+        {/* Profile Card */}
+        <div className="col-lg-4">
+          <div className="cyber-card profile-card text-center p-4 h-100 d-flex flex-column align-items-center justify-content-center">
+            <div className="avatar-glow-ring mb-3">
+              <i className="fas fa-user-tie avatar-icon text-cyan"></i>
+            </div>
+
+            <h2 className="fw-bold fs-3 text-white mb-1 text-capitalize">
+              {examiner?.name || "Examiner Name"}
+            </h2>
+            <p className="role-tag mb-3 text-uppercase">{examiner?.role || "EXAMINER"}</p>
+
+            <div className={`status-pill-badge ${examiner?.isVerified ? "verified" : "pending"}`}>
+              <i className={`fas ${examiner?.isVerified ? "fa-check-circle" : "fa-exclamation-circle"} me-2`}></i>
+              {examiner?.isVerified ? "Verified Account" : "Pending Verification"}
+            </div>
+          </div>
+        </div>
+
+        {/* Details Card */}
+        <div className="col-lg-8">
+          <div className="cyber-card p-4 h-100">
+            <div className="d-flex justify-content-between align-items-center mb-4 border-bottom border-secondary border-opacity-25 pb-3">
+              <h3 className="fs-5 fw-bold m-0 theme-gradient-text">Personal Details</h3>
+              <span className="info-chip">
+                <i className="fas fa-shield-alt me-1"></i> Secure Profile
+              </span>
+            </div>
+
+            <div className="details-list">
+              <div className="detail-item">
+                <div className="detail-label">
+                  <i className="fas fa-user icon-cyan"></i>
+                  <span>Full Name</span>
+                </div>
+                <div className="detail-value text-capitalize">{examiner?.name || "—"}</div>
+              </div>
+
+              <div className="detail-item">
+                <div className="detail-label">
+                  <i className="fas fa-envelope icon-magenta"></i>
+                  <span>Email Address</span>
+                </div>
+                <div className="detail-value">{examiner?.email || "—"}</div>
+              </div>
+
+              <div className="detail-item">
+                <div className="detail-label">
+                  <i className="fas fa-phone icon-purple"></i>
+                  <span>Phone Number</span>
+                </div>
+                <div className="detail-value">{examiner?.phone_no || "Not Added"}</div>
+              </div>
+
+              <div className="detail-item">
+                <div className="detail-label">
+                  <i className="fas fa-id-badge icon-amber"></i>
+                  <span>Account Role</span>
+                </div>
+                <div className="detail-value text-uppercase">{examiner?.role || "EXAMINER"}</div>
+              </div>
+
+              <div className="detail-item border-0">
+                <div className="detail-label">
+                  <i className="fas fa-check-double icon-green"></i>
+                  <span>Email Status</span>
+                </div>
+                <div className="detail-value">
+                  <span className={`status-text-pill ${examiner?.isVerified ? "is-verified" : "is-pending"}`}>
+                    {examiner?.isVerified ? "Verified" : "Unverified"}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Widgets Grid */}
+      <div className="row g-4 mt-1">
+        <div className="col-md-4">
+          <div className="cyber-widget widget-cyan">
+            <div className="widget-icon">
+              <i className="fas fa-user-check"></i>
+            </div>
+            <div>
+              <p className="widget-title">Account</p>
+              <h4 className="widget-value">{examiner?.isActive !== false ? "Active" : "Inactive"}</h4>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-md-4">
+          <div className="cyber-widget widget-green">
+            <div className="widget-icon">
+              <i className="fas fa-envelope"></i>
+            </div>
+            <div>
+              <p className="widget-title">Email Status</p>
+              <h4 className="widget-value">
+                {examiner?.isVerified ? "Verified" : "Unverified"}
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-md-4">
+          <div className="cyber-widget widget-orange">
+            <div className="widget-icon">
+              <i className="fas fa-phone-alt"></i>
+            </div>
+            <div>
+              <p className="widget-title">Phone</p>
+              <h4 className="widget-value">
+                {examiner?.phone_no ? "Connected" : "Pending"}
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ExaminerProfile;
